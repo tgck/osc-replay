@@ -29,7 +29,7 @@ How to use
 Paramaters (hard coded in *py)
 ------	
 1. osc-record.py
-	- receive-from port number (default 8001)
+	- receive-at port number (default 8001)
 	- address-patterns which are accepted and logged (ll.41-51, ll.26-39)
 	
 2. osc-replay.py
