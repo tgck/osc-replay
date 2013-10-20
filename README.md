@@ -8,6 +8,9 @@ Depends on Python, liblo:
  - liblo 0.26
 	(http://liblo.sourceforge.net/)
 
+OSCメッセージを受信してログ出力するスクリプトと、そのログを元に記録した時系列でメッセージを再生するスクリプトのセットです。Mac OS X 10.6.8および上記のソフトウェアバージョンで動作確認をしています。
+ローカルマシン上のプロセス間通信を対象としており、ホスト間通信はサポートしていません。
+
 How to use
 ------
 1. Run message receiver and record messages as csv file.
@@ -19,6 +22,8 @@ How to use
 	./osc-replay.py anyfile.csv
 
 	The process terminates when it reaches the end of csv.
+
+コンソールから、Pythonスクリプトを起動・停止する要領で実行してください。
 
 
 Paramaters (hard coded in *py)
@@ -32,5 +37,6 @@ Paramaters (hard coded in *py)
 	- address-patterns which are processed to send (ll.61-74)
 		just for now, can handle 'none', 'f', 'ff' osc-messages.(can't handle other types for now.. )
 
+現状諸々、ハードコーディングとなっています。送受信したいアドレスパターンとそのハンドラを、osc-replay.pyに記述する必要があります。ゆくゆくは設定ファイルに外出しするか、どんなメッセージでも捌けるように改修したいところ。
 
 Copyright (C) 2013  kohei taniguchi
